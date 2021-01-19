@@ -15,11 +15,14 @@ Build Docker image
 $ docker build -t certbot-image .
 ```
 
-Execute Docker. (Don't forget to put the variables)
+Execute Docker (don't forget to set the variables)
 
 ```sh
 $ docker run -v "$(pwd)":"/etc/letsencrypt/archive" -e CLOUDFLARE_EMAIL={dns_cloudflare_email} CLOUDFLARE_API_KEY={dns_cloudflare_api_key} -e DOMAIN={domain} -e EMAIL={email} --rm certbot-image
 ```
+
+After the script has finished, you can find the certs inside the directory from which you executed the `docker run` command.
+
 
 ### Variables
 
@@ -27,7 +30,7 @@ $ docker run -v "$(pwd)":"/etc/letsencrypt/archive" -e CLOUDFLARE_EMAIL={dns_clo
 |------------------------|--------------------------------|
 | CLOUDFLARE_EMAIL       | Your Cloudflare account email |
 | CLOUDFLARE_API_KEY     | Global API Key of your Cloudflare domain |
-| DOMAIN                 | The domain for need SSL certs |
+| DOMAIN                 | The domain you need the SSL certs for |
 | EMAIL                  | Your email                    |
 
 ## Resources
