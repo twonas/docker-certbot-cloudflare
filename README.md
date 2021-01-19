@@ -12,7 +12,7 @@ $ cd docker-certbot-cloudflare
 Build Docker image
 
 ```sh
-$ docker build certbot-image
+$ docker build -t certbot-image .
 ```
 
 Execute Docker. (Don't forget to put the variables)
